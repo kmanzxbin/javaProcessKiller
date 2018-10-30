@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  @(#)log4j.xml 07/01/2009
+  Copyright (c), 2009 深圳业拓讯通信科技有限公司（Shenzhen Yetelcom Communication Tech. Co.,Ltd.），
+  著作权人保留一切权利，任何使用需经授权。
+-->
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/"
+	debug="false">
+
+
+	<!--log console, control the console's information.-->
+	<appender name="console-appender"
+		class="org.apache.log4j.ConsoleAppender">
+		<param name="Target" value="System.out" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<!-- The default pattern: Date Priority [Category] Message\n -->
+			<param name="conversionPattern"
+				value="%d{ABSOLUTE} [%C{1}] [%t] %m%n" />
+		</layout>
+	</appender>
+
+
+	<!--!!!!!the system's root log configure, donnt modify it if you are not understant this!!!!!-->
+	<root>
+		<level value="info" />
+		<!--<appender-ref ref="SEP-ASYNC" /> -->
+		<appender-ref ref="console-appender" />
+	</root>
+</log4j:configuration>
